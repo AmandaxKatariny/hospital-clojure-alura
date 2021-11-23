@@ -29,3 +29,15 @@ Nessa aula, aprendemos:
 - Remover o primeiro elemento da fila utilizando pop
 - Selecionar o primeiro elemento da fila utilizando peek
 - Atualizar o valor do mapa utilizando update
+
+
+### Aula 02
+
+Nessa aula, aprendemos:
+
+- Implementar um limite à fila fazendo uso do if
+- Verificar o tamanho da fila utilizando count
+- Tratar erros não previstos com a função ex-info
+- Trabalhar com a compatibilidade Java ao criar a classe Thread
+- Iniciar uma Thread com o método start
+- Compreender os problemas que existem ao utilizarmos símbolos globais compartilhados entre threads

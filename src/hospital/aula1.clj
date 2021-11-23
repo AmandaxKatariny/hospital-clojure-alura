@@ -6,15 +6,6 @@
 (defn simula-um-dia []
   ; root binding
   (def hospital (h.model/novo-hospital))
-  (pprint (h.logic/chega-em hospital :espera "111"))
-
-  )
-
-(simula-um-dia)
-
-(defn simula-um-dia []
-  ; root binding
-  (def hospital (h.model/novo-hospital))
   (def hospital (h.logic/chega-em hospital :espera "111"))
   (def hospital (h.logic/chega-em hospital :espera "222"))
   (def hospital (h.logic/chega-em hospital :espera "333"))
@@ -28,6 +19,38 @@
   (def hospital (h.logic/atende hospital :espera))
   (pprint hospital)
 
+  (def hospital (h.logic/chega-em hospital :espera "666"))
+  (def hospital (h.logic/chega-em hospital :espera "777"))
+  (def hospital (h.logic/chega-em hospital :espera "888"))
+  (pprint hospital)
+
+  (def hospital (h.logic/chega-em hospital :espera "999"))
+  (pprint hospital)
+  )
+; (simula-um-dia) ;return= Fila já está cheia
+
+(println "Version 2: Threads")
+
+
+(defn chega-em-malvado [pessoa]
+  (def hospital (h.logic/chega-em-pausado hospital :espera pessoa))
+  (println "apos inserir" pessoa))
+
+
+(defn simula-um-dia-em-paralelo
+  "fazendo uso de thread"
+  []
+  ;Problema de variacel global (Simbolo do namaspace) compartilhado
+  (def hospital (h.model/novo-hospital))
+  (.start (Thread. (fn [] (chega-em-malvado "111"))))
+  (.start (Thread. (fn [] (chega-em-malvado "222"))))
+  (.start (Thread. (fn [] (chega-em-malvado "333"))))
+  (.start (Thread. (fn [] (chega-em-malvado "444"))))
+  (.start (Thread. (fn [] (chega-em-malvado "555"))))
+  (.start (Thread. (fn [] (chega-em-malvado "666"))))
+  (.start (Thread. (fn [] ((Thread/sleep 4000)
+                           (pprint hospital)
+                           ))))
   )
 
-(simula-um-dia)
+(simula-um-dia-em-paralelo)
