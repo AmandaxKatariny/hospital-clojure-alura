@@ -41,3 +41,15 @@ Nessa aula, aprendemos:
 - Trabalhar com a compatibilidade Java ao criar a classe Thread
 - Iniciar uma Thread com o método start
 - Compreender os problemas que existem ao utilizarmos símbolos globais compartilhados entre threads
+
+### Aula 03
+
+Nessa aula, aprendemos:
+
+- Implementar um limite à fila fazendo uso do if
+- Evitar o uso de símbolos globais Root Binding
+- Transformar um mapa imutável em mutável através do uso do atom
+- Dereferenciar o átomo com deref para acessar a fila de espera dentro de um mapa
+- Usar Shadowing para “esconder” um símbolo local
+- Alterar o conteúdo de dentro do átomo usando swap!
+- Usar o swap para evitar o problema de concorrência
