@@ -56,3 +56,12 @@ Nessa aula, aprendemos:
 - Criar Delegates
 - Isolar a mutabilidade da imutabilidade
 - Utilizar juxt para invocar várias funções em um parâmetro
+
+### Aula 06
+
+Nessa aula, aprendemos:
+
+- Utilizar ref para criar mutabilidade isolada com controle transacional
+- Trocar o valor de uma referência através de ref-set e alter
+- Trabalhar com transações utilizando dosync
+- Executar um código e utilizar o resultado apenas no “futuro” com future
