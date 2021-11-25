@@ -47,3 +47,12 @@ Nessa aula, aprendemos:
 - Implementar uma chamada parcial de uma função utilizando partial
 - Utilizar doseq para iterar por uma sequência de elementos
 - Utilizar dotimes para executar uma tarefa um número fixo de vezes
+
+
+## Aula 05
+Nessa aula, aprendemos:
+
+- Fazer a transferência de uma pessoa de uma fila para outra
+- Criar Delegates
+- Isolar a mutabilidade da imutabilidade
+- Utilizar juxt para invocar várias funções em um parâmetro

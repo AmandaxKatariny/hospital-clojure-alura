@@ -38,3 +38,36 @@
 (defn atende
   [hospital departamento]
   (update hospital departamento pop))
+
+(defn proxima-pessoa
+  "Retorna o próximo paciente da fila"
+  [hospital departamento]
+  (-> hospital
+      departamento
+      peek))
+
+(defn transfere
+  "Transfere o proximo paciente da fila 'de' para a fila 'para'"
+  [hospital de para]
+  (let [pessoa (peek (get hospital de))]
+    (-> hospital
+        (atende de)
+        (chega-em para pessoa))))
+
+(defn atende-completo
+  "Somente para demonstrar que é possivel retornar os dois ('quem' e a 'fila')"
+  [hospital departamento]
+  {:paciente (update hospital departamento peek)
+   :hospital (update hospital departamento pop)})
+
+
+;não ficou melhor
+(defn atende-completo-que-chama-ambos
+  "v2: Somente para demonstrar que é possivel retornar os dois ('quem' e a 'fila')"
+  [hospital departamento]
+  (let [fila (get hospital departamento)
+        peek-pop (juxt peek pop)
+        [pessoa fila-atualizada] (peek-pop fila)
+        hospital-atualizado (hospital assoc departamento fila-atualizada)]
+    {:paciente pessoa
+     :hospital hospital-atualizado}))
